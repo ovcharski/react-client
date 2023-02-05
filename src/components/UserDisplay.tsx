@@ -1,4 +1,5 @@
 import type { User } from "../types"
+import MessageDisplay from "./MessageDisplay"
 
 type Props = {
     user: User
@@ -15,6 +16,12 @@ function UserDisplay ({ user }: Props) {
 
         </p>
 
+    </div>
+
+    <div>
+        {
+            user.messages.map((message, index) => <MessageDisplay message={message} index={index} key={index}/>)
+        }
     </div>
 
 </div>
